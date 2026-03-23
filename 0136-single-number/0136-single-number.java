@@ -1,24 +1,20 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int n= nums.length;  // to know about the range
+        //Step 1: Create the "TALLY SHEET"
+        HashMap<Integer,Integer>map= new HashMap<>();
 
-        //pick each number one by one
-        for(int i =0;i<n;i++){
+        //Step 2: Fill the tally sheet
+        for(int i =0; i <nums.length; i++){
             int num = nums[i];
-            int count =0;
-
-            //check every other number in the array
-            for(int j =0; j<n; j++){
-                if(nums[j] == num){
-                    count++;
-                }
-            }
-            //if we only saw the number once, it's the lone survivor
-            if(count == 1){
-                return num;
+            //if it's already in the map ,add 1 if not,Start at 0 and add 1.
+            map.put(num,map.getOrDefault(num,0)+1);
+        }
+        //step 3: Find the number with a count of 1 
+        for(Map.Entry<Integer,Integer>entry:map.entrySet()){
+            if(entry.getValue()==1){
+                return entry.getKey();
             }
         }
-        return -1;
-
+       return -1;
     }
 }
