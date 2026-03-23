@@ -1,20 +1,19 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        //Step 1: Create the "TALLY SHEET"
-        HashMap<Integer,Integer>map= new HashMap<>();
+        //step 1.store the length to keep the code clean
+        int n = nums.length;
 
-        //Step 2: Fill the tally sheet
-        for(int i =0; i <nums.length; i++){
-            int num = nums[i];
-            //if it's already in the map ,add 1 if not,Start at 0 and add 1.
-            map.put(num,map.getOrDefault(num,0)+1);
+        //step2. initialize the 'magic eraser' at 0 
+        int xor=0;
+        
+        //step 3. loop to check every number in the array excatly once
+        for(int i=0;i<n;i++){
+
+            //step 4. the twin will eventually find and erase each other 
+            xor=xor^nums[i];
         }
-        //step 3: Find the number with a count of 1 
-        for(Map.Entry<Integer,Integer>entry:map.entrySet()){
-            if(entry.getValue()==1){
-                return entry.getKey();
-            }
-        }
-       return -1;
+        //step 5. the only survivor is the number without twin
+        return xor;
+
     }
 }
