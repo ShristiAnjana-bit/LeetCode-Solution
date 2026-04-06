@@ -8,16 +8,19 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0026-remove-duplicates-from-sorted-array](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0136-single-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0136-single-number) |
 | [0189-rotate-array](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0189-rotate-array) |
+| [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
 | [0283-move-zeroes](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0283-move-zeroes) |
 | [1752-check-if-array-is-sorted-and-rotated](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/1752-check-if-array-is-sorted-and-rotated) |
 ## Bit Manipulation
 |  |
 | ------- |
 | [0136-single-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0136-single-number) |
+| [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
 ## Math
 |  |
 | ------- |
 | [0189-rotate-array](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0189-rotate-array) |
+| [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
 ## Two Pointers
 |  |
 | ------- |
@@ -33,4 +36,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0001-two-sum) |
+| [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
+## Binary Search
+|  |
+| ------- |
+| [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
+## Sorting
+|  |
+| ------- |
+| [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
 <!---LeetCode Topics End-->
