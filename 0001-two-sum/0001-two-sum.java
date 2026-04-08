@@ -1,17 +1,22 @@
 class Solution { // declares a class 
     public int[] twoSum(int[] nums, int target) { 
-    int n = nums.length;
+      
+      //map to store the keys and values
+      Map<Integer,Integer> map = new HashMap<>();
 
-for(int i = 0; i<n; i++){
-    for(int j= i+1; j<n;j++){
-        if(nums[i]+nums[j]== target){
-            return new int[] {i,j};
+      for(int i =0; i<nums.length; i++){
+        int complement = target - nums[i];
+
+//check if partner is in the map
+        if(map.containsKey(complement)){
+            //return the index of the partner and current index
+            return new int[] {map.get(complement),i};
         }
-    }
-}
-//if no solution is found , return an empty array (or as required)
-return new int[] {};
-     
+            //if not found, add current number to map for future partners
+            map.put(nums[i],i);
+        
+      }
+      return new int[] {};
         }
     
     }
