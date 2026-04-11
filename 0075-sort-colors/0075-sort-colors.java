@@ -1,23 +1,30 @@
 class Solution {
     public void sortColors(int[] nums) {
-       int count0=0, count1=0, count2= 0;
+       int low =0;
+       int mid =0;
+       int high = nums.length-1;
 
-       //step 1: count the occurrence
-       for(int i=0; i<nums.length; i++){
-         if(nums[i] == 0) count0++;
-        else if(nums[i] == 1) count1++;
-        else count2++;
-       }
+       while(mid <=high){
+         if(nums[mid] ==0){
+            //swap mid and low 
+            int temp = nums[low];
+            nums[low] = nums[mid];
+            nums[mid] = temp;
+            low++;
+            mid++;
 
-       //step2: overwrite the original array
-       for(int i =0; i<nums.length; i++){
-        if(i<count0){
-            nums[i] =0;
-        }else if (i<count0 + count1){
-            nums[i] =1;
-        }else{
-            nums[i] =2;
-        }
+         }else if(nums[mid] ==1){
+            //already in middle ,just move 
+            mid++;
+         }else{ //nums[mid] ==2
+         //swap mid and high
+         int temp =nums[high];
+         nums[high] = nums[mid];
+         nums[mid] = temp;
+         high--;
+      //we don't increment mid here becouse the swapped element needs to be chaecked here
+
+         }
        }
-    }
+}
 }
