@@ -2,22 +2,20 @@ class Solution {
     public int majorityElement(int[] nums) {
       int n = nums.length;
 
-      //outer loop : picks each element one by one
-      for(int i =0; i<n; i++){
-        int count =0;
-        int candidate = nums[i];
+      HashMap<Integer,Integer> map = new HashMap<>();
+      for(int i= 0; i<nums.length; i++){
+        int num = nums[i]; //traversing through the arrAY
 
-        //inner loop: count how many times "candidate" appears in the whole array
-        for(int j=0; j<n; j++){
-            if(nums[j] == candidate){
-                count++;
-            }
+        // Get current count(default to 0) and add1
+        map.put(num,map.getOrDefault(num,0)+1);
+
+        //check if this number is now the mejority
+        if(map.get(num)>n/2){
+            return num;
         }
-        //if the count is more than n/2 , we found our winner!
-        if(count > n/2){
-            return candidate;
-        }
+
       }
       return -1;
+
     }
 }
