@@ -1,28 +1,23 @@
 class Solution {
     public int[] rearrangeArray(int[] nums) {
         int n = nums.length;
+        int[] result = new int[n]; // the new array we are filling 
 
-        //step 1: create two lists to store numbers separately
-        ArrayList<Integer> pos = new ArrayList<>();
-        ArrayList<Integer> neg = new ArrayList<>();
+        int posIndex =0; // next avilable seat for a +ve number
+        int negIndex = 1; // next available seat for a -ve number
 
-        //step 2: fill the lists (0(n) times)
-        for(int i=0; i<n; i++){
-            if(nums[i]>0){
-                pos.add(nums[i]);
-                }else{
-                    neg.add(nums[i]);
-                }
+        for(int i =0; i<n; i++){
+            //if the current number is +ve
+            if(nums[i] >0){
+                result[posIndex] = nums[i]; //put it in the next eeven seat
+                posIndex += 2;
+            }
+            //if the current number is -ve
+            else{
+                result[negIndex] = nums[i]; //put it in a next odd seat
+                negIndex +=2;
+            }
         }
-        //step 3: put them back into the array in alternating order 0(n) time
-        for(int i =0; i<n/2;i++){
-            //positive go to even indices:0,2,4
-            nums[2*i] = pos.get(i);
-            //-ve go to odd indices : 1,3,4
-            nums[2*i+1] = neg.get(i);
-
-        }
-        return nums;
-
+         return result;
     }
 }
