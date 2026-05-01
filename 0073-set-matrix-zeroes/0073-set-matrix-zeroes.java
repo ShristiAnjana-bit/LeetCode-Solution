@@ -1,51 +1,31 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
+     int n =matrix.length;
+     int m = matrix[0].length;
 
-     int m = matrix.length;
-     int n = matrix[0].length;
+     //step 1: Auxiliary arrays(the swithcs)
+     int[] row = new int[n];
+     int[] col = new int[m];
 
-     boolean firstRow = false, firstCol = false;
-
-     //step 1: check if first row has zero 
-     for(int j =0; j<n; j++){
-        if(matrix[0][j]==0) firstRow = true;
-     }
-
-     // step 2: check if first column has zero
-     for(int i = 0; i<m; i++){
-        if(matrix[i][0]==0) firstCol = true;
-     }
-
-     // step 3: use first row & col as markers
-     for(int i =1; i<m; i++){
-        for(int j =1; j<n; j++){
-            if(matrix[i][j] ==0){
-                matrix[i][0] = 0;
-                matrix[0][j] = 0;
+     //marking ohase
+     for(int i =0; i<n; i++){
+        for(int j=0; j<m; j++){
+            if(matrix[i][j]==0){
+                row[i] =1;
+                col[j] =1;
             }
         }
      }
-                //step 4: set matrix cells to 0 based on markers
-                for(int i = 1; i<m; i++){
-                    for(int j = 1; j<n; j++){
-                        if(matrix[i][0] == 0 || matrix[0][j] == 0){
-                            matrix[i][j] =0;
-                        }
-                    }
-                }
-
-            //step 5 : handle first row
-                if(firstRow){
-                    for (int j = 0; j < n; j++)
-                    matrix[0][j] =0;
-                }
-
-            // step 6 : handle first col
-                if(firstCol) {
-                    for(int i =0; i <m; i++)
-                    matrix[i][0] =0;
-                }
+     //step 3: zeroing phase
+     for(int i =0; i<n; i++){
+        for(int j=0; j<m; j++){
+            //if row i OR colume j was marked
+            if(row[i] == 1|| col[j] ==1){
+                matrix[i][j] =0;
             }
+        }
+     }
+        }
         }
      
         
