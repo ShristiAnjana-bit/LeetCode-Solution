@@ -2,33 +2,41 @@ class Solution {
     public List<Integer> majorityElement(int[] nums) {
     int n = nums.length;
 
-    //list to store the final result
-    List<Integer> ls = new ArrayList<>();
+  int count1 =0 ,count2 =0;
+  int element1= Integer.MIN_VALUE, element2 =Integer.MIN_VALUE;
 
-    //hashMao to remeber the count of each unique element
-    Map<Integer,Integer>map = new HashMap<>();
+  //PASS 1: FIND POTENTIAL CANDIDATE
+  for(int i =0; i<n; i++){
+    if(count1==0 && nums[i] != element2){
+        count1=1;
+        element1=nums[i];
+    }else if(count2==0 && nums[i]!= element1){
+        count2 =1;
+        element2 =nums[i];
 
-    //minimum count needed for an element to be a majority element
-    //(floor of n/3)+1
-    int mini =(int)(n/3)+1;
-
-    //single iteration over the array
-    for(int i =0; i<n; i++){
-        //update the count for the current element in the map
-        int count = map.getOrDefault(nums[i],0) +1;
-        map.put(nums[i],count);
-
-        //check if the current element reaches the minimum threshold
-        if(count == mini){
-            ls.add(nums[i]);
-        }
-        //optimization: STOP IF WE HAVE ALREADY FOUND TWO MAJORITY ELEMENT
-        if(ls.size() == 2){
-            break;
-        }
+    }else if(nums[i] == element1){
+        count1++;
+    }else if(nums[i]==element2){
+        count2++;
+    }else{
+        count1--;
+        count2--;
     }
-    //Sort the result list as required by some platform
-    Collections.sort(ls);
-    return ls;
+  }
+  //phase 2 : Manual verfication
+  List<Integer> ls =new ArrayList<>();
+  count1=0; count2=0;
+  for(int i =0; i<n; i++){
+    if(nums[i] == element1) count1++;
+    if(nums[i] == element2) count2++;
+
+  }
+  int mini =(int)(n/3)+1;
+  if(count1>=mini) ls.add(element1);
+  if(count2>= mini) ls.add(element2);
+
+  Collections.sort(ls);  //optioned sorting based on requirements
+  return ls;
+
     }
 }
