@@ -1,32 +1,34 @@
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
-      int n = nums.length;
+    int n = nums.length;
 
-      //list to store the result,initially empty[2]  
-      List<Integer> ls = new ArrayList<>();
+    //list to store the final result
+    List<Integer> ls = new ArrayList<>();
 
-      for(int i =0; i<n; i++){
-        //check if the current element is already in our list to avoid redundant check[1,3]
-        if(ls.size()==0 || ls.get(0)!=nums[i]){
-            int count =0;
+    //hashMao to remeber the count of each unique element
+    Map<Integer,Integer>map = new HashMap<>();
 
-            //travers the entire array to count occurrence of nums[i] [3]
-            for(int j=0; j<n; j++){
-                if(nums[j]==nums[i]){
-                    count++;
-                }
-            }
-            //if count is greater than floor (n/3) add it to the list(3)
-            if(count >(n/3)){
-                ls.add(nums[i]);
-            }
+    //minimum count needed for an element to be a majority element
+    //(floor of n/3)+1
+    int mini =(int)(n/3)+1;
+
+    //single iteration over the array
+    for(int i =0; i<n; i++){
+        //update the count for the current element in the map
+        int count = map.getOrDefault(nums[i],0) +1;
+        map.put(nums[i],count);
+
+        //check if the current element reaches the minimum threshold
+        if(count == mini){
+            ls.add(nums[i]);
         }
-        //at most there can only be two element appearing 
-        //if we found two,we cantop the iteration
-        if(ls.size()==2){
+        //optimization: STOP IF WE HAVE ALREADY FOUND TWO MAJORITY ELEMENT
+        if(ls.size() == 2){
             break;
         }
-      }
-      return ls;
+    }
+    //Sort the result list as required by some platform
+    Collections.sort(ls);
+    return ls;
     }
 }
