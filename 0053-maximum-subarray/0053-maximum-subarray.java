@@ -1,23 +1,16 @@
 class Solution {
     public int maxSubArray(int[] nums) {
     
-     int maxSum = nums[0];
-     int currentSum =0;
+    int currentSum =nums[0]; 
+    int maxSum = nums[0];
 
-     for(int i =0; i <nums.length; i++){
-        //step 1: add current element to our running total 
-        currentSum += nums[i];
-
-        //step 2: if we found a new high record, save it
-        if(currentSum > maxSum){
-            maxSum = currentSum;
+     for(int i=1; i<nums.length; i++){
+        if(currentSum <0){
+            currentSum = nums[i];
+        }else{
+            currentSum += nums[i];
         }
-
-        //step 3: if the sum is negative ,it's useless for 
-        //future sunarrays , rest it to zero
-        if (currentSum <0){
-            currentSum =0;
-        }
+        maxSum = Math.max(maxSum,currentSum);
      }
      return maxSum;
 
