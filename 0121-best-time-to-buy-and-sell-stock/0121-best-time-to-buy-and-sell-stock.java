@@ -1,21 +1,18 @@
 class Solution {
     public int maxProfit(int[] prices) {
-     //initilize minPrice as a very large number so the first price becomes the new min
-     int minPrice = Integer.MAX_VALUE;
-     int maxProfit =0;
+    int minPrices = prices[0]; //best buy price seen so far
+    int maxProfit =0; // 0 beacuse not trading is valid
 
-     for(int i = 0; i<prices.length; i++){
-        //update the min price seen so far
-        if(prices[i]<minPrice){
-            minPrice = prices[i];
+    for(int i =1; i<prices.length; i++){
+        if(prices[i]<minPrices){
+            minPrices = prices[i]; //found better buy day
+        }else{
+            //try sellinf today
+            int profit = prices[i] -minPrices;
+            maxProfit = Math.max(maxProfit,profit);
         }
-        //calculate potential profit if we sold today
-        //and compare it with the best profit we've seen so far
-        else if (prices[i] - minPrice > maxProfit){
-            maxProfit = prices[i] - minPrice;
-        }
-     }   
-     return maxProfit;
+    }
+    return maxProfit;
     }
 
     
