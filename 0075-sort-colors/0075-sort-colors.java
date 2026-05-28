@@ -1,31 +1,29 @@
 class Solution{
     public void sortColors(int[] nums){
-        int low = 0;
-        int mid = 0;
-        int high = nums.length -1;
+        int low =0, mid= 0, high=nums.length-1;
+        
+        while(mid<=high){
+            if(nums[mid] ==0){
+                //0 belongs at the front
+            swap(nums,low,mid);
+            low++;
+            mid++;
 
-        while( mid <= high ){
-            if(nums[mid]==0){
-                //swap mid with low
-                int temp = nums[low];
-                nums[low] = nums[mid];
-                nums[mid] = temp;
-                low++;
+
+            }else if(nums[mid]==1){
+                //1 is already in the middle zone
                 mid++;
-            }
-            else if(nums[mid] == 1){
-// we will not swap because 1 is suppose to be 1 middle
-             mid++;
-            } 
-            else{
-                int temp = nums[high];
-                nums[high] = nums[mid];
-                nums[mid] = temp;
+
+            }else {
+                swap(nums,mid,high);
                 high--;
-
             }
-            
-
         }
+
     }
+private void swap(int[] nums,int i, int j){
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+}
 }
