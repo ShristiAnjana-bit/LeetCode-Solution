@@ -14,6 +14,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0054-spiral-matrix](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0054-spiral-matrix) |
 | [0056-merge-intervals](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0056-merge-intervals) |
 | [0073-set-matrix-zeroes](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0073-set-matrix-zeroes) |
+| [0074-search-a-2d-matrix](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0074-search-a-2d-matrix) |
 | [0075-sort-colors](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0075-sort-colors) |
 | [0088-merge-sorted-array](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0088-merge-sorted-array) |
 | [0118-pascals-triangle](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0118-pascals-triangle) |
@@ -71,6 +72,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0074-search-a-2d-matrix](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0074-search-a-2d-matrix) |
 | [0268-missing-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0268-missing-number) |
 | [0287-find-the-duplicate-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0287-find-the-duplicate-number) |
 ## Sorting
@@ -112,6 +114,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0048-rotate-image](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0048-rotate-image) |
 | [0054-spiral-matrix](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0054-spiral-matrix) |
 | [0073-set-matrix-zeroes](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0073-set-matrix-zeroes) |
+| [0074-search-a-2d-matrix](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0074-search-a-2d-matrix) |
 ## Prefix Sum
 |  |
 | ------- |
