@@ -1,29 +1,39 @@
 class Solution {
+    //function to search target in 2D matrix using binary search
     public boolean searchMatrix(int[][] matrix, int target) {
-        int rows = matrix.length;
-        int cols = matrix[0].length;
+        //Get the number of rows
+        int n = matrix.length;
 
-        int left = 0;
-        int right = rows*cols-1;
+        //get the number of columns
+        int m = matrix[0].length;
 
-        while(left <= right) {
-            int mid = left + (right - left) / 2;
+        //set initial binary search range
+        int low = 0, high = n * m -1;
 
-            //convert 1d INDEX TO 2D ROW, COL
+        //perform binary search 
+        while(low <= high) {
+            //calculate middle index
+            int mid = (low + high) / 2;
 
-            int row = mid/cols;
-            int col = mid% cols;
+            //map 1D index to 2d coordinates
+            int row = mid / m;
+            int col = mid % m;
 
-            int midValue = matrix[row][col];
+            //check if target is found
+            if(matrix[row][col] == target)
+            return true;
 
-            if (midValue == target) {
-                return true; // found
-            } else if (midValue < target){
-                left = mid+1; /// search right half
-            } else {
-                right = mid-1; // search left half
-            }
+            //discard left half
+            else if (matrix[row][col] < target)
+            low = mid + 1;
+
+            //discard right half
+            else
+            high = mid -1;
+
         }
-        return false; //not found
+        //target not found
+        return false;
+        
     }
 }
