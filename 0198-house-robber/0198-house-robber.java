@@ -1,33 +1,21 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
-    public int solve(int ind, int[] nums, int[] dp){
-
-        if(ind == 0)
-        return nums[0];
-
-        if(ind < 0)
-        return 0;
-
-        if(dp[ind] != -1)
-        return dp[ind];
-
-        int pick = nums[ind] + solve(ind - 2, nums,dp);
-
-        int notPick = solve(ind-1, nums,dp);
-
-        dp[ind] = Math.max(pick,notPick);
-
-        return dp[ind];
-
-
-    }
     public int rob(int[] nums){
         int n = nums.length;
-
         int[] dp = new int[n];
-        Arrays.fill(dp,-1);
 
-        return solve(n-1,nums,dp);
+        dp[0] = nums[0];
+        for(int i =1; i <n; i++){
+            int pick = nums[i];
+
+            if(i >1)
+            pick += dp[i-2];
+
+            int notPick = dp[i -1];
+
+            dp[i] = Math.max(pick,notPick);
+        }
+        return dp[n-1];
     }
 }
