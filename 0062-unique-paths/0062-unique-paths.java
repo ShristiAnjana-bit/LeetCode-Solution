@@ -1,34 +1,37 @@
 class Solution {
-    public int solve(int i , int j, int[][] dp){
+    public int uniquePaths(int m, int n){
+
+        int[] prev = new int[n];
+
+        for(int i = 0; i<m; i++){
+
+            int[] curr = new int[n];
+
+            for(int j = 0; j<n; j++){
+            
+            //Base case
+            if(i == 0 && j == 0){
+                curr[j] = 1;
+                continue;
+            }      
+
+            int up =0;
+            int left = 0;
+
+            //take value from upper cell
+            if(i>0)
+            up = prev[j];
+
+            //take value from left cell
+            if(j>0)
+            left = curr[j-1];
+
+            //store total paths
+            curr[j] = up + left;
         
-        //base case
-        if(i==0 && j==0)
-        return 1;
-
-        //out of grid
-        if(i < 0 || j < 0)
-        return 0;
-
-        //memoization 
-        if(dp[i][j] != -1)
-        return dp[i][j];
-
-        //previous states
-        int up = solve(i-1,j,dp);
-        int left = solve(i,j-1,dp);
-
-        //store answer
-        dp[i][j] = up + left;
-
-        return dp[i][j];
-    }
-    public int uniquePaths(int m, int n) {
-
-        int[][] dp = new int[m][n];
-        for(int[] row:dp){
-        Arrays.fill(row, -1); 
-    }
-        return solve(m-1,n-1,dp);
-
+        }
+        prev = curr;
+        }
+        return prev[n-1];
     }
 }
