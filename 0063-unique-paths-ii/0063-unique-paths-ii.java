@@ -4,38 +4,37 @@ class Solution {
          int m = obstacleGrid.length;
          int n = obstacleGrid[0].length;
 
-         int[][] dp = new int[m][n];
+         int[] prev = new int[n];
 
-         //fill the table from bottom right to top left
          for(int i = m-1; i >= 0; i--){
-            for(int j =n-1; j>=0; j--){
-        
-        //obstacle 
-        if (obstacleGrid[i][j] == 1){
-            dp[i][j] = 0;
+             int[] curr = new int[n];
 
-        }
-        //Destination 
-        else if (i == m-1 && j == n-1){
-            dp[i][j] =1;
+        for(int j = n-1; j >=0; j--){
 
-        }
-        else {
-            int right = 0;
-            int down =0;
+            if(obstacleGrid[i][j] == 1){
+                curr[j] =0;
+            }
 
-            if(j+1 <n){
-                right = dp[i][j+1];
+            else if(i == m-1 && j == n-1){
+                curr[j] = 1;
 
             }
-            if(i+1 <m){
-                down = dp[i+1][j];
+            else{
+                int right =0;
+                int down =0;
+
+                if(j+1<n)
+                right = curr[j+1];
+
+                if(i+1<m)
+                down = prev[j];
+
+                curr[j] = right + down;
             }
-            dp[i][j] = right + down;
         }
-            }
+        prev = curr;
+
          }
-         return dp[0][0];
-
+   return prev[0];
     }
 }
