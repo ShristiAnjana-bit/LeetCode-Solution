@@ -6,44 +6,36 @@ class Solution {
 
          int[][] dp = new int[m][n];
 
-         for(int[] row : dp){
-            Arrays.fill(row,-1);
-         }
-
-         return solve(0,0,obstacleGrid, dp);
-    }
-
-    public int solve(int i, int j, int[][] grid, int[][] dp){
-
-        int m = grid.length;
-        int n = grid[0].length;
-
-        //base case 1 : out boundary
-        if (i >= m || j>= n){
-            return 0;
+         //fill the table from bottom right to top left
+         for(int i = m-1; i >= 0; i--){
+            for(int j =n-1; j>=0; j--){
+        
+        //obstacle 
+        if (obstacleGrid[i][j] == 1){
+            dp[i][j] = 0;
 
         }
-        //base Case 2: obstacle
-        if(grid[i][j] == 1){
-            return 0;
+        //Destination 
+        else if (i == m-1 && j == n-1){
+            dp[i][j] =1;
+
         }
-        //base case3 : destination
-        if(i == m-1 && j == n-1){
-            return 1;
-        }
-            //memozation
-            if(dp[i][j] != -1){
-                return dp[i][j];
+        else {
+            int right = 0;
+            int down =0;
+
+            if(j+1 <n){
+                right = dp[i][j+1];
+
             }
-
-            int right = solve(i, j+1, grid, dp);
-            int down = solve(i+1,j,grid,dp);
-
+            if(i+1 <m){
+                down = dp[i+1][j];
+            }
             dp[i][j] = right + down;
-
-            return dp[i][j];
         }
-      }
-    
+            }
+         }
+         return dp[0][0];
 
-    
+    }
+}
