@@ -29,6 +29,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0283-move-zeroes](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0283-move-zeroes) |
 | [0287-find-the-duplicate-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0287-find-the-duplicate-number) |
 | [0560-subarray-sum-equals-k](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0560-subarray-sum-equals-k) |
+| [0931-minimum-falling-path-sum](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0931-minimum-falling-path-sum) |
 | [1752-check-if-array-is-sorted-and-rotated](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/1752-check-if-array-is-sorted-and-rotated) |
 | [2149-rearrange-array-elements-by-sign](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/2149-rearrange-array-elements-by-sign) |
 ## Bit Manipulation
@@ -112,6 +113,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0198-house-robber](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0198-house-robber) |
 | [0509-fibonacci-number](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0509-fibonacci-number) |
+| [0931-minimum-falling-path-sum](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0931-minimum-falling-path-sum) |
 ## Simulation
 |  |
 | ------- |
@@ -125,6 +127,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0063-unique-paths-ii](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0063-unique-paths-ii) |
 | [0073-set-matrix-zeroes](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0073-set-matrix-zeroes) |
 | [0074-search-a-2d-matrix](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0074-search-a-2d-matrix) |
+| [0931-minimum-falling-path-sum](https://github.com/ShristiAnjana-bit/LeetCode-Solution/tree/master/0931-minimum-falling-path-sum) |
 ## Prefix Sum
 |  |
 | ------- |
